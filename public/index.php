@@ -9,6 +9,10 @@ require '../vendor/autoload.php';
 require '../config/app.php';
 
 switch (isset($_GET['page']) ? $_GET['page'] : '/') {
+    case 'test':
+        $controller = new \App\Controllers\TestController();
+        $controller->index();
+        break;
     case '/':
         $controller = new \App\Controllers\TaskController();
         $controller->allTasks();
