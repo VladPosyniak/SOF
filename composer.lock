@@ -4,56 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "493906c8c3780a8952c8742e67a44813",
-    "content-hash": "8597eaf2660076292d7864f4ce0aebbd",
+    "hash": "c22ac5cbc6d8efb8d917312d0def36eb",
+    "content-hash": "883586fcd9165a79ab61f199afe3ce2b",
     "packages": [
-        {
-            "name": "eventviva/php-image-resize",
-            "version": "1.6.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/eventviva/php-image-resize.git",
-                "reference": "7c51c8448a2b23a4d416c86a3f7c2fe1bea14945"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/eventviva/php-image-resize/zipball/7c51c8448a2b23a4d416c86a3f7c2fe1bea14945",
-                "reference": "7c51c8448a2b23a4d416c86a3f7c2fe1bea14945",
-                "shasum": ""
-            },
-            "require": {
-                "ext-gd": "*",
-                "php": ">=5.3.0"
-            },
-            "suggest": {
-                "ext-exif": "Auto-rotate jpeg files"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "lib"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Aditya Patadia",
-                    "homepage": "http://aditya.patadia.org/"
-                }
-            ],
-            "description": "PHP class to re-size and scale images",
-            "homepage": "https://github.com/eventviva/php-image-resize",
-            "keywords": [
-                "image",
-                "php",
-                "resize",
-                "scale"
-            ],
-            "time": "2017-04-20 15:28:31"
-        },
         {
             "name": "jasongrimes/paginator",
             "version": "1.0.2",

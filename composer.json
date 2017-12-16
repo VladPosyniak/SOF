@@ -6,8 +6,7 @@
     "minimum-stability": "stable",
     "require": {
         "smarty/smarty": "^3.1",
-        "jasongrimes/paginator": "^1.0",
-        "eventviva/php-image-resize": "^1.6"
+        "jasongrimes/paginator": "^1.0"
     },
 
     "autoload": {

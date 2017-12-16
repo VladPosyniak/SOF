@@ -8,48 +8,28 @@ session_start();
 require '../vendor/autoload.php';
 require '../config/app.php';
 
-switch (isset($_GET['page']) ? $_GET['page'] : '/') {
-    case 'test':
-        $controller = new \App\Controllers\TestController();
-        $controller->index();
-        break;
-    case '/':
-        $controller = new \App\Controllers\TaskController();
-        $controller->allTasks();
-        break;
-    case 'news':
-        $controller = new \App\Controllers\TaskController();
-        $controller->allTasks();
-        break;
-    case 'create':
-        $controller = new \App\Controllers\TaskController();
-        $controller->create();
-        break;
-    case 'store':
-        $controller = new \App\Controllers\TaskController();
-        $controller->store();
-        break;
-    case 'show':
-        $controller = new \App\Controllers\TaskController();
-        $controller->show();
-        break;
-    case 'edit':
-        $controller = new \App\Controllers\TaskController();
-        $controller->edit();
-        break;
-    case 'update':
-        $controller = new \App\Controllers\TaskController();
-        $controller->update();
-        break;
-    case 'login':
-        $controller = new \App\Controllers\AdminController();
-        $controller->login();
-        break;
-    case 'logout':
-        $controller = new \App\Controllers\AdminController();
-        $controller->logout();
-        break;
-    default:
-        exit('404 error');
-        break;
+$url = explode('/',explode('?',$_SERVER['REQUEST_URI'])[0]);
+unset($url[0]);
+foreach ($url as $key => $item){
+    $url[$key] = trim($item);
 }
+
+
+if (isset($url[1]) && $url[1] != ''){
+    $controller = $url[1];
+    if (isset($url[2]) && $url != ''){
+        $method = $url[2];
+    }
+    else{
+        $method = 'index';
+    }
+}
+else{
+    $controller = DEFAULT_CONTROLLER;
+    $method = DEFAULT_METHOD;
+}
+
+$controller =  '\App\Controllers\\'.$controller.'Controller';
+$controller = new $controller();
+$controller->$method();
+

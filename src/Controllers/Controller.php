@@ -7,6 +7,7 @@ abstract class Controller
 	private $smarty;
 	function __construct()
 	{
+	    //настройки Смарти
 		$this->smarty = new Smarty();
 		$this->smarty->setTemplateDir(APP.'/Resources/templates');
 		$this->smarty->setCompileDir(APP.'/Resources/templates_c');
@@ -14,7 +15,7 @@ abstract class Controller
 		$this->smarty->setConfigDir(APP.'/Resources/configs');
 		$this->smarty->caching = SMARTY_CACHE;
 
-		$this->smarty->assign(
+		$this->smarty->assign( //стандартные значения, которые мы передаем в Смарти
 		    [
 		        'admin' => $this->checkAdmin(),
                 'message' => $this->getFlashSession()
@@ -34,6 +35,7 @@ abstract class Controller
 		header('Location:'.$url);
 	}
 
+	//получение одноразового сообщения
 	public function getFlashSession(){
 	    $message = isset($_SESSION['message']) ? $_SESSION['message'] : null;
 
