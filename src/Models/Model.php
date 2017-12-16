@@ -26,8 +26,13 @@ abstract class Model
 		$this->table_name = mb_strtolower($table);
 	}
 
+	public function query($sql, $data){
+	    $stmt = $this->pdo->prepare($sql);
+	    $stmt->execute($data);
+	    return $stmt->fetchAll();
+    }
 
-	public function save(){ //создание новой записе в таблице 
+	public function save(){ //создание новой записе в таблице
 		$allTableFields = $this->fieldsTable(); //получаем названия всех столбцов в таблице
 		$setFields = [];
 		$setValues = [];
