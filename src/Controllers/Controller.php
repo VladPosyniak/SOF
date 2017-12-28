@@ -17,8 +17,7 @@ abstract class Controller
 
 		$this->smarty->assign( //стандартные значения, которые мы передаем в Смарти
 		    [
-		        'admin' => $this->checkAdmin(),
-                'message' => $this->getFlashSession()
+                'message' => getFlashSession()
             ]
         );
 
@@ -26,27 +25,5 @@ abstract class Controller
 
 	public function getSmarty(){
 	    return $this->smarty;
-    }
-
-	public function redirect($url, $message = null){
-        if (isset($message)){
-            $_SESSION['message'] = $message;
-        }
-		header('Location:'.$url);
-	}
-
-	//получение одноразового сообщения
-	public function getFlashSession(){
-	    $message = isset($_SESSION['message']) ? $_SESSION['message'] : null;
-
-	    if (isset($message)){
-	        unset($_SESSION['message']);
-        }
-
-        return $message;
-    }
-
-    public function checkAdmin(){
-	    return isset($_SESSION['admin']) ? true : false;
     }
 }

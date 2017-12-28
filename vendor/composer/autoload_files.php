@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'f084d01b0a599f67676cffef638aa95b' => $vendorDir . '/smarty/smarty/libs/bootstrap.php',
+    '0697737e3a9c65743e631b67c29865f7' => $baseDir . '/src/Helpers/app.php',
 );
